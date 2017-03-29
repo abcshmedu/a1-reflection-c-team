@@ -3,4 +3,5 @@
 .project
 .settings/
 /checkstyle/
+/checker-output/
 Start_checkStyle_Check.bat
