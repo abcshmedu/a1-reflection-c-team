@@ -6,7 +6,7 @@ package edu.hm.cs.swa.lab01;
  */
 public class App 
 {
-    public static void main( String[] args ) throws IllegalArgumentException, IllegalAccessException
+    public static void main( String[] args ) throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException
     {
         System.out.println( "Hello World!" );
         

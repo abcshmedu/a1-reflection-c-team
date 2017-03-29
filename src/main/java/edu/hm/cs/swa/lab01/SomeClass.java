@@ -1,6 +1,5 @@
 package edu.hm.cs.swa.lab01;
 
-import java.io.*;
 import java.util.*;
 
 public class SomeClass {
