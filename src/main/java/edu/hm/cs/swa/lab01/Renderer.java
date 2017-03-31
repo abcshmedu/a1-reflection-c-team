@@ -1,7 +1,6 @@
 package edu.hm.cs.swa.lab01;
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 
 /**
@@ -47,6 +46,7 @@ public class Renderer {
 	 */
 	public String render() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
 		String result = "";
+
 		Class< ? > classObject = object.getClass();
 		Field[] fields = classObject.getFields();
 		for (final Field field : fields) {
@@ -56,28 +56,23 @@ public class Renderer {
 					String type = "";
 					String value = "";
 					if (((RenderMe) annotation).with().equals("edu.hm.renderer.ArrayRenderer")) {
-						Object val = field.get(object);						
-											
-						int length = Array.getLength(val);
-						value += "[" + Array.get(val, 0); // TODO: check for 0 length array!
-						for (int index = 1; index < length; index++) {
-							value += ", " + Array.get(val, index);
-							value += "]";
-						}	
-						value += "]";
-
-						type = val.getClass().getSimpleName();
-						
+						ArrayRenderer arrayR = new ArrayRenderer(object,field);
+						String [] info = arrayR.render();
+						type = info[0];
+						value = info[1];
 					}
 					else {
-						type = field.getType().toString();
+						type = field.getType().getSimpleName().toString();
 						value = field.get(object).toString();
 					}
 					String name = field.getName();
 					result += String.format("%s (%s) %s%n", name, type, value);
 				}
+					
 			}
 		}
 		return result;
 	}
 }
+
+

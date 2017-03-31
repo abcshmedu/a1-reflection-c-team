@@ -6,7 +6,6 @@
 - also plowed the sources with checkstyle. Nothing dramatic. Mostly cosmetic stuff.
 
   **Todos:**
-- shift code for arrays to the ArrayRenderer class
 - check for 0-length arrays
 - check source with checkstyle
 - write tests... yawn
