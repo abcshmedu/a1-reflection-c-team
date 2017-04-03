@@ -1,38 +1,60 @@
 package edu.hm.cs.swa.lab01;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertEquals;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
+import java.util.Date;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+public class AppTest {
+	
+	Renderer renderer;
+	SomeClass testObj;
+	String expectedResult;
+	
+	@Before
+	public void setUp() {
+		final int magicNumber = 20;
+		final int magicArray[] = {1, 2, 3};
+		final Date magicDate = new Date(123456789);
+		testObj = new SomeClass(magicNumber);
+		expectedResult = "getFoo (int) " + magicNumber + String.format("%n") +
+								  "foo (int) " + magicNumber + String.format("%n") +
+								  "array (int[]) " + Arrays.toString(magicArray) + String.format("%n") +
+								  "date (Date) " + magicDate + String.format("%n");
+		renderer = new Renderer(testObj);
+	}
 
     /**
      * Rigourous Test :-)
      */
+    @Test
     public void testApp()
     {
-        assertTrue( true );
+    	String result = "";
+    	try {
+			result = renderer.render();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        assertEquals(expectedResult, result);
     }
 }
