@@ -2,11 +2,10 @@
 # a1-reflection-c-team
 # 
   **Status:**
-- Annotated fields information get printed out correctly.
+- Annotated fields and methods information gets printed out correctly.
 - also plowed the sources with checkstyle. Nothing dramatic. Mostly cosmetic stuff.
 
   **Todos:**
-- check for 0-length arrays
 - check source with checkstyle
-- write tests... yawn
-
+- write tests using parametrizedRunner ... yawn
+- sort out exceptions
