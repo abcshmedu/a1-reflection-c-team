@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
  * @author Michael Eggers
  * @author Rebecca Brydon
  */
-public class App 
+public class MainClass 
 {
     public static void main( String[] args ) throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException, InvocationTargetException
     {

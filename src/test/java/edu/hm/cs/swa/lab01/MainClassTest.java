@@ -18,11 +18,26 @@ import org.junit.runners.Parameterized.Parameters;
  * Unit test for simple App.
  */
 @RunWith(Parameterized.class)
-public class AppTest {
+public class MainClassTest {
 	
-	Renderer renderer;
-	SomeClass testObj;
-	String expectedResult;
+	private Integer inputNumber;
+	private String expectedResult;
+	private SomeClass someClass;
+	private Renderer renderer;
+	final static int magicNumber = 20;
+	final static int magicArray[] = {1, 2, 3};
+	final static Date magicDate = new Date(123456789);
+	
+	
+	@Before
+	public void initialize() {
+		renderer = new Renderer(someClass);
+	}
+	
+	public MainClassTest(SomeClass someClass, String expectedResult) {
+		this.someClass = someClass;
+		this.expectedResult = expectedResult;
+	}
 	
 /*	@Before
 	public void setUp() {
@@ -37,20 +52,30 @@ public class AppTest {
 		renderer = new Renderer(testObj);
 	}*/
 	
-/*	@Parameters
-	public static Collection<Object[]> data(){
-		
+	@Parameters
+	public static Collection data() {
+		return Arrays.asList(new Object[][] {
+			{new SomeClass(20), "getFoo (int) " + 20 + String.format("%n") +
+				  "foo (int) " + 20 + String.format("%n") +
+				  "array (int[]) " + Arrays.toString(magicArray) + String.format("%n") +
+				  "date (Date) " + magicDate + String.format("%n") },
+			{new SomeClass(30), "getFoo (int) " + 30 + String.format("%n") +
+			  "foo (int) " + 30 + String.format("%n") +
+			  "array (int[]) " + Arrays.toString(magicArray) + String.format("%n") +
+			  "date (Date) " + magicDate + String.format("%n") }
+			}
+		);
 	}
-*/
+
     /**
      * Rigourous Test :-)
      */
     @Test
-    public void testApp()
-    {
-    	String result = "";
+    public void testApp() {
     	try {
-			result = renderer.render();
+			assertEquals(expectedResult,
+					renderer.render());
+			
 		} catch (IllegalArgumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -64,6 +89,5 @@ public class AppTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        assertEquals(expectedResult, result);
     }
 }
