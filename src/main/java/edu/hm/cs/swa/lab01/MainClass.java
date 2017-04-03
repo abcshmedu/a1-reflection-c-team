@@ -12,7 +12,6 @@ public class MainClass
     public static void main( String[] args ) throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException, InvocationTargetException
     {
         System.out.println( "RenderMe fields: \n" );
-        
         Renderer renderer = new Renderer(new SomeClass(20));
         System.out.println(renderer.render());
     }

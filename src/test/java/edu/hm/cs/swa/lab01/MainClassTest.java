@@ -20,13 +20,11 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class MainClassTest {
 	
-	private Integer inputNumber;
 	private String expectedResult;
 	private SomeClass someClass;
 	private Renderer renderer;
-	final static int magicNumber = 20;
-	final static int magicArray[] = {1, 2, 3};
-	final static Date magicDate = new Date(123456789);
+	private final static int MAGIC_ARRAY[] = {1, 2, 3};
+	private final static Date MAGIC_DATE = new Date(123456789);
 	
 	
 	@Before
@@ -57,12 +55,12 @@ public class MainClassTest {
 		return Arrays.asList(new Object[][] {
 			{new SomeClass(20), "getFoo (int) " + 20 + String.format("%n") +
 				  "foo (int) " + 20 + String.format("%n") +
-				  "array (int[]) " + Arrays.toString(magicArray) + String.format("%n") +
-				  "date (Date) " + magicDate + String.format("%n") },
+				  "array (int[]) " + Arrays.toString(MAGIC_ARRAY) + String.format("%n") +
+				  "date (Date) " + MAGIC_DATE + String.format("%n") },
 			{new SomeClass(30), "getFoo (int) " + 30 + String.format("%n") +
 			  "foo (int) " + 30 + String.format("%n") +
-			  "array (int[]) " + Arrays.toString(magicArray) + String.format("%n") +
-			  "date (Date) " + magicDate + String.format("%n") }
+			  "array (int[]) " + Arrays.toString(MAGIC_ARRAY) + String.format("%n") +
+			  "date (Date) " + MAGIC_DATE + String.format("%n") }
 			}
 		);
 	}
