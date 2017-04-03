@@ -10,11 +10,22 @@ public class SomeClass {
 	@RenderMe(with = "edu.hm.renderer.ArrayRenderer")
 	public int[] array = {1, 2, 3};
 	
+	@RenderMe(with = "edu.hm.renderer.ArrayRenderer")
+	public int[] nullArray = {};
+	
 	@RenderMe
 	public Date date = new Date(123456789);
 
 	public SomeClass(int foo) {
 		this.foo = foo;
+	}
+	
+	@TARDIS
+	public String timeWarping = "timetime";
+	
+	@TARDIS
+	public String travelInTime() {
+		return "Fantasic!";
 	}
 	
 	@RenderMe

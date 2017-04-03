@@ -3,6 +3,8 @@ package edu.hm.cs.swa.lab01;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 
+import javax.management.RuntimeErrorException;
+
 
 /**
  * ArrayRenderer extracts type and values of array fields annotated by RenderMe(with="edu.hm.renderer.ArrayRenderer")
@@ -39,27 +41,33 @@ public class ArrayRenderer {
 	 * 
 	 * @throws IllegalArgumentException, IllegalAccessException
 	 */
-	public String [] render() throws IllegalArgumentException, IllegalAccessException {
-		String [] info = new String[2];
-		String value = "";
-		String type = "";
-		Object val = field.get(object);						
-		
-		int length = Array.getLength(val);
-		if (length > 0) {
-			value += "[" + Array.get(val, 0);
-			for (int index = 1; index < length; index++) {
-				value += ", " + Array.get(val, index);
-			}	
-			value += "]";			
-		}
+	public String [] render() {
+		try {
+			String [] info = new String[2];
+			String value = "";
+			String type = "";
+			Object val = field.get(object);						
+			
+			int length = Array.getLength(val);
+			if (length > 0) {
+				value += "[" + Array.get(val, 0);
+				for (int index = 1; index < length; index++) {
+					value += ", " + Array.get(val, index);
+				}	
+				value += "]";			
+			}
 
-		type = val.getClass().getSimpleName();
-		
-		info[0] = value;
-		info[1] = type;
-		
-		return info;
-		
+			type = val.getClass().getSimpleName();
+			
+			info[0] = value;
+			info[1] = type;
+			
+			return info;
+			
+		} catch (Exception e) {
+			throw new RuntimeException();
+		}
 	}
+	
+	
 }

@@ -7,5 +7,3 @@
 
   **Todos:**
 - check source with checkstyle
-- write tests using parametrizedRunner ... yawn
-- sort out exceptions
