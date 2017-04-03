@@ -2,6 +2,8 @@ package edu.hm.cs.swa.lab01;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * Renderer prints name, type and value of a field that was annotated by RenderMe.
@@ -43,11 +45,31 @@ public class Renderer {
 	 * @throws IllegalArgumentException
 	 * @throws IllegalAccessException
 	 * @throws ClassNotFoundException
+	 * @throws InvocationTargetException 
 	 */
-	public String render() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
+	public String render() throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException, InvocationTargetException {
 		String result = "";
-
+		
 		Class< ? > classObject = object.getClass();
+		
+		Method[] methods = classObject.getMethods();
+		for (final Method method : methods) {
+			Annotation[] methodAnnotations = method.getAnnotations();
+			for (final Annotation methodAnotation : methodAnnotations) {
+				
+				if (methodAnotation instanceof RenderMe) {
+					String name = "";
+					String type = ""; // rückgabe typ
+					String value = ""; // return value
+					name = method.getName();
+					type = method.getReturnType().toString();
+					value = method.invoke(object, null).toString();
+					result += String.format("%s (%s) %s%n", name, type, value);
+				}
+			}
+			
+		}
+		
 		Field[] fields = classObject.getFields();
 		for (final Field field : fields) {
 			Annotation[] annotations = field.getAnnotations();
@@ -71,6 +93,9 @@ public class Renderer {
 					
 			}
 		}
+		
+		
+		
 		return result;
 	}
 }

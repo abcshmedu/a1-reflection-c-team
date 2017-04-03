@@ -1,5 +1,7 @@
 package edu.hm.cs.swa.lab01;
 
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * App Main 
  * @author Michael Eggers
@@ -7,7 +9,7 @@ package edu.hm.cs.swa.lab01;
  */
 public class App 
 {
-    public static void main( String[] args ) throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException
+    public static void main( String[] args ) throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException, InvocationTargetException
     {
         System.out.println( "RenderMe fields: \n" );
         

@@ -16,4 +16,10 @@ public class SomeClass {
 	public SomeClass(int foo) {
 		this.foo = foo;
 	}
+	
+	@RenderMe
+	public int getFoo() {
+		return foo;
+	}
+	
 }
