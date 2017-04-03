@@ -2,14 +2,19 @@ package edu.hm.cs.swa.lab01;
 
 import java.lang.annotation.*;
 
-@Retention(RetentionPolicy.RUNTIME)
-
 /**
- * RenderMe 
+ * RenderMe.
+ * 
  * @author Michael Eggers
  * @author Rebecca Brydon
  *
  */
+@Retention(RetentionPolicy.RUNTIME)
 public @interface RenderMe {
-	String with() default "";
+  /**
+   * Optional given RenderClass.
+   * 
+   * @return String
+   */
+  String with() default "";
 }

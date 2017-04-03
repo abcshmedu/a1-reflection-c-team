@@ -39,7 +39,7 @@ public class MainClassTest {
 
 	
 	@Parameters
-	public static Collection data() {
+	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][] {
 			{new SomeClass(20), "getFoo (int) " + 20 + String.format("%n") +
 				  "foo (int) " + 20 + String.format("%n") +
@@ -56,10 +56,12 @@ public class MainClassTest {
 	}
 
     /**
-     * Rigourous Test :-)
+     * Rigourous Test :-).
+     * @throws InvocationTargetException 
+     * @throws IllegalAccessException 
      */
     @Test
-    public void testApp() {
+    public void testApp() throws IllegalAccessException, InvocationTargetException {
     	try {
 			assertEquals(expectedResult,
 					renderer.render());
