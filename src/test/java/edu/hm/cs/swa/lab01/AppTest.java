@@ -4,23 +4,27 @@ import static org.junit.Assert.assertEquals;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
-
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
 
 /**
  * Unit test for simple App.
  */
+@RunWith(Parameterized.class)
 public class AppTest {
 	
 	Renderer renderer;
 	SomeClass testObj;
 	String expectedResult;
 	
-	@Before
+/*	@Before
 	public void setUp() {
 		final int magicNumber = 20;
 		final int magicArray[] = {1, 2, 3};
@@ -31,8 +35,13 @@ public class AppTest {
 								  "array (int[]) " + Arrays.toString(magicArray) + String.format("%n") +
 								  "date (Date) " + magicDate + String.format("%n");
 		renderer = new Renderer(testObj);
+	}*/
+	
+/*	@Parameters
+	public static Collection<Object[]> data(){
+		
 	}
-
+*/
     /**
      * Rigourous Test :-)
      */

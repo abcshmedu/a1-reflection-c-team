@@ -46,11 +46,13 @@ public class ArrayRenderer {
 		Object val = field.get(object);						
 		
 		int length = Array.getLength(val);
-		value += "[" + Array.get(val, 0); // TODO: check for 0 length array!
-		for (int index = 1; index < length; index++) {
-			value += ", " + Array.get(val, index);
-		}	
-		value += "]";
+		if (length > 0) {
+			value += "[" + Array.get(val, 0);
+			for (int index = 1; index < length; index++) {
+				value += ", " + Array.get(val, index);
+			}	
+			value += "]";			
+		}
 
 		type = val.getClass().getSimpleName();
 		

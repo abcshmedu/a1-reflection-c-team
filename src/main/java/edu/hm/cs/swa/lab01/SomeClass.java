@@ -8,7 +8,7 @@ public class SomeClass {
 	public int foo;
 	
 	@RenderMe(with = "edu.hm.renderer.ArrayRenderer")
-	public int[] array = { 1, 2, 3};
+	public int[] array = {1, 2, 3};
 	
 	@RenderMe
 	public Date date = new Date(123456789);
