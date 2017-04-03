@@ -58,8 +58,8 @@ public class Renderer {
 					if (((RenderMe) annotation).with().equals("edu.hm.renderer.ArrayRenderer")) {
 						ArrayRenderer arrayR = new ArrayRenderer(object,field);
 						String [] info = arrayR.render();
-						type = info[0];
-						value = info[1];
+						value = info[0];
+						type = info[1];
 					}
 					else {
 						type = field.getType().getSimpleName().toString();
