@@ -10,110 +10,108 @@ import java.util.*;
  *
  */
 public class SomeClass {
+	private final int dateNumber = 123456789;
 
-  private final int dateNumber = 123456789;
-  
-  @TARDIS
-  public String timeWarping = "timetime";
+	@TARDIS
+	public String timeWarping = "timetime";
 
-  @RenderMe
-  public int foo;
+	@RenderMe
+	public int foo;
 
-  @RenderMe(with = "edu.hm.renderer.ArrayRenderer")
-  public final int[] array = { 1, 2, 3 };
-  
-  @RenderMe(with = "edu.hm.renderer.ArrayRenderer")
-  public final int[] nullArray = {};
-  
-  @RenderMe
-  public Date date;
+	@RenderMe(with = "edu.hm.renderer.ArrayRenderer")
+	public final int[] array = { 1, 2, 3 };
 
-  /**
-   * Constructor.
-   * 
-   * @param foo
-   *          Foo
-   */
-  public SomeClass(int foo) {
-	  this.foo = foo;
-	  date = new Date(dateNumber);
-  }
+	@RenderMe(with = "edu.hm.renderer.ArrayRenderer")
+	public final int[] nullArray = {};
 
-  /**
-   * getArray.
-   * 
-   * @return array
-   */
-  public int[] getArray() {
-    return array;
-  }
+	@RenderMe
+	public Date date;
 
+	/**
+	 * Constructor.
+	 * 
+	 * @param foo
+	 *            Foo
+	 */
+	public SomeClass(int foo) {
+		this.foo = foo;
+		date = new Date(dateNumber);
+	}
 
-  /**
-   * getNullArray.
-   * 
-   * @return nullArray
-   */
-  public int[] getNullArray() {
-    return nullArray;
-  }
+	/**
+	 * getArray.
+	 * 
+	 * @return array
+	 */
+	public int[] getArray() {
+		return array;
+	}
 
-  /**
-   * getTimeWarping.
-   * 
-   * @return timeWarping
-   */
-  public String getTimeWarping() {
-    return timeWarping;
-  }
+	/**
+	 * getNullArray.
+	 * 
+	 * @return nullArray
+	 */
+	public int[] getNullArray() {
+		return nullArray;
+	}
 
-  /**
-   * getDate.
-   * 
-   * @return date
-   */
-  public Date getDate() {
-    return date;
-  }
+	/**
+	 * getTimeWarping.
+	 * 
+	 * @return timeWarping
+	 */
+	public String getTimeWarping() {
+		return timeWarping;
+	}
 
-  /**
-   * setDate.
-   * 
-   * @param date
-   *          Date
-   */
-  public void setDate(Date date) {
-    this.date = date;
-  }
+	/**
+	 * getDate.
+	 * 
+	 * @return date
+	 */
+	public Date getDate() {
+		return date;
+	}
 
-  /**
-   * Timetravel is fantastic!.
-   * 
-   * @return String
-   */
-  @TARDIS
-  public String travelInTime() {
-    return "Fantasic!";
-  }
+	/**
+	 * setDate.
+	 * 
+	 * @param date
+	 *            Date
+	 */
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
-  /**
-   * Returns foo.
-   * 
-   * @return foo
-   */
-  @RenderMe
-  public int getFoo() {
-    return foo;
-  }
+	/**
+	 * Timetravel is fantastic!.
+	 * 
+	 * @return String
+	 */
+	@TARDIS
+	public String travelInTime() {
+		return "Fantasic!";
+	}
 
-  /**
-   * Sets value of foo.
-   * 
-   * @param foo
-   *          Foo
-   */
-  public void setFoo(int foo) {
+	/**
+	 * Returns foo.
+	 * 
+	 * @return foo
+	 */
+	@RenderMe
+	public int getFoo() {
+		return foo;
+	}
 
-  }
+	/**
+	 * Sets value of foo.
+	 * 
+	 * @param foo
+	 *            Foo
+	 */
+	public void setFoo(int foo) {
+
+	}
 
 }

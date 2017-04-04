@@ -1,7 +1,5 @@
 package edu.hm.cs.swa.lab01;
 
-import java.lang.reflect.InvocationTargetException;
-
 /**
  * App Main.
  * 
@@ -10,7 +8,7 @@ import java.lang.reflect.InvocationTargetException;
  */
 public final class MainClass {
 
-  private final static int MAGIC_NUM = 20;
+  private static final int MAGIC_NUM = 20;
 
   /**
    * Constructor.
@@ -20,18 +18,12 @@ public final class MainClass {
   }
 
   /**
-   * Main.
+   * Entry Point for the JVM.
    * 
-   * @param args
-   *          Arguments.
-   * 
-   * @throws IllegalArgumentException
-   * @throws IllegalAccessException
-   * @throws ClassNotFoundException
-   * @throws InvocationTargetException
+   * @param args Arguments won't help here.
+   * @throws RuntimeException If one of the many exceptions was thrown.
    */
-  public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException,
-      ClassNotFoundException, InvocationTargetException {
+  public static void main(String[] args) throws RuntimeException {
     System.out.println("RenderMe fields: \n");
     Renderer renderer = new Renderer(new SomeClass(MAGIC_NUM));
     System.out.println(renderer.render());
