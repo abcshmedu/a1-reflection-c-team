@@ -15,9 +15,6 @@ public class SomeClass {
   
   @TARDIS
   public String timeWarping = "timetime";
-  
-  @RenderMe
-  public Date date;
 
   @RenderMe
   public int foo;
@@ -25,6 +22,12 @@ public class SomeClass {
   @RenderMe(with = "edu.hm.renderer.ArrayRenderer")
   public final int[] array = { 1, 2, 3 };
   
+  @RenderMe(with = "edu.hm.renderer.ArrayRenderer")
+  public final int[] nullArray = {};
+  
+  @RenderMe
+  public Date date;
+
   /**
    * Constructor.
    * 
@@ -45,8 +48,6 @@ public class SomeClass {
     return array;
   }
 
-  @RenderMe(with = "edu.hm.renderer.ArrayRenderer")
-  public final int[] nullArray = {};
 
   /**
    * getNullArray.
