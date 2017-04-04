@@ -3,7 +3,8 @@
 # 
   **Status:**
 - Annotated fields and methods information gets printed out correctly.
-- also plowed the sources with checkstyle. Nothing dramatic. Mostly cosmetic stuff.
+- Checkstyle complains about public fields in SomeClass. Apparently fine, since we need them to be.
+Also there is a weird complain about tab-space at the beginning of the file of SomeClass.
 
   **Todos:**
-- check source with checkstyle
+- Check tab-complaint from checkstyle.
