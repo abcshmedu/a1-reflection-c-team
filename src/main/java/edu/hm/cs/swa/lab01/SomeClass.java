@@ -12,12 +12,29 @@ import java.util.*;
 public class SomeClass {
 
   private final int dateNumber = 123456789;
+  
+  @TARDIS
+  public String timeWarping = "timetime";
+  
+  @RenderMe
+  public Date date;
 
   @RenderMe
   public int foo;
 
   @RenderMe(with = "edu.hm.renderer.ArrayRenderer")
   public final int[] array = { 1, 2, 3 };
+  
+  /**
+   * Constructor.
+   * 
+   * @param foo
+   *          Foo
+   */
+  public SomeClass(int foo) {
+	  this.foo = foo;
+	  date = new Date(dateNumber);
+  }
 
   /**
    * getArray.
@@ -67,22 +84,6 @@ public class SomeClass {
   public void setDate(Date date) {
     this.date = date;
   }
-
-  @RenderMe
-  public Date date = new Date(dateNumber);
-
-  /**
-   * Constructor.
-   * 
-   * @param foo
-   *          Foo
-   */
-  public SomeClass(int foo) {
-    this.foo = foo;
-  }
-
-  @TARDIS
-  public String timeWarping = "timetime";
 
   /**
    * Timetravel is fantastic!.
