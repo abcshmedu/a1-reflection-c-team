@@ -17,14 +17,14 @@ public class SomeClass {
   public int foo;
 
   @RenderMe(with = "edu.hm.renderer.ArrayRenderer")
-  public final float[] array = { 1, 2, 3 };
+  public final int[] array = { 1, 2, 3 };
 
   /**
    * getArray.
    * 
    * @return array
    */
-  public float[] getArray() {
+  public int[] getArray() {
     return array;
   }
 
@@ -69,7 +69,7 @@ public class SomeClass {
   }
 
   @RenderMe
-  private Date date = new Date(dateNumber);
+  public Date date = new Date(dateNumber);
 
   /**
    * Constructor.
