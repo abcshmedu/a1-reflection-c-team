@@ -4,7 +4,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * TARDIS A Annotation class for testing purpose.
+ * TARDIS Annotation class for testing purposes.
  * 
  * @author Michael Eggers
  * @author Rebecca Brydon
